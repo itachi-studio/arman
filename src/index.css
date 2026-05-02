@@ -745,14 +745,19 @@ footer {
 .pain-img,
 .step-img {
   width: 100%;
+  height: auto;
   display: block;
   object-fit: cover;
   border-radius: var(--radius);
   border: 1px solid var(--line-2);
 }
-.hero-img { aspect-ratio: 4/5; }
-.pain-img { aspect-ratio: 4/5; filter: saturate(0.85) brightness(0.92); }
+.hero-img { aspect-ratio: 3/4; }
+.pain-img { aspect-ratio: 4/3; filter: saturate(0.85) brightness(0.92); }
 .step-img { aspect-ratio: 1/1; margin-bottom: 18px; }
+
+@media (min-width: 720px) {
+  .hero-img { aspect-ratio: 16/9; }
+}
 
 .register-bg-img {
   position: absolute;

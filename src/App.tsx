@@ -71,7 +71,7 @@ function Hero() {
               loading="eager"
               fetchPriority="high"
               width="864"
-              height="1080"
+              height="1152"
             />
           </picture>
         </div>
