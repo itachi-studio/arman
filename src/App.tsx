@@ -62,11 +62,18 @@ function Hero() {
           </div>
         </div>
         <div className="reveal">
-          <div className="ph" role="img" aria-label="Иллюстрация героя">
-            <span className="ph-prompt">
-              Молодой человек с рюкзаком идёт через ночной казахстанский город будущего. Неоновая кофейня на фоне, в&nbsp;руках айфон. Над головой рой беспокойных мыслей — иконки денег, разбитого сердца, дедлайна, гантели. Рядом Арман — уверенный парень азиатской внешности в&nbsp;очках, протягивает руку, тёплый золотой подсвет вокруг него. В&nbsp;архитектуре фона намёки на&nbsp;шанырак или казахский орнамент в&nbsp;неоне. Аниме-киберпанк.
-            </span>
-          </div>
+          <picture>
+            <source media="(min-width: 720px)" srcSet="/img/hero-desktop.webp" />
+            <img
+              src="/img/hero-mobile.webp"
+              alt="Парень с телефоном в неоновом ночном Алматы и Арман с золотым подсветом рядом"
+              className="hero-img"
+              loading="eager"
+              fetchPriority="high"
+              width="864"
+              height="1080"
+            />
+          </picture>
         </div>
       </div>
     </section>
@@ -88,11 +95,14 @@ function Pain() {
           </p>
         </div>
         <div className="reveal">
-          <div className="ph" role="img" aria-label="Иллюстрация подавленности">
-            <span className="ph-prompt">
-              Тот же парень лежит на диване, листает телефон, экран отражается в&nbsp;глазах. Вокруг — разбросанные книги по&nbsp;саморазвитию, недопитый кофе, неубранная комната. Та&nbsp;же палитра что на&nbsp;экране 1, но&nbsp;холоднее и&nbsp;серее, неона почти нет — подавленность. Аниме.
-            </span>
-          </div>
+          <img
+            src="/img/pain.webp"
+            alt="Парень лежит на диване, листает телефон в тёмной комнате"
+            className="pain-img"
+            loading="lazy"
+            width="1400"
+            height="1050"
+          />
         </div>
       </div>
     </section>
@@ -188,19 +198,22 @@ function Game() {
 const STEPS = [
   {
     num: '01 / 03',
-    prompt: 'Парень/девушка вводит ник в форме, на фоне аватар собирается из неоновых частиц. Аниме.',
+    img: '/img/step-1.webp',
+    alt: 'Парень создаёт себя — голограмма аватара из неоновых частиц',
     title: 'Создаёшь себя',
     body: 'Выбираешь ник, видишь свой стартовый аватар.',
   },
   {
     num: '02 / 03',
-    prompt: 'Силуэт Армана в очках разговаривает с пользователем, между ними диалоговые облака. Тёплый золотой свет от Армана. Аниме.',
+    img: '/img/step-2.webp',
+    alt: 'Арман в очках разговаривает с пользователем, тёплый золотой свет',
     title: 'Арман узнаёт тебя',
     body: 'Короткий разговор — он понимает где ты сейчас и куда тебе.',
   },
   {
     num: '03 / 03',
-    prompt: 'Экран телефона с карточкой задания «Сегодня: позвони отцу. 10 минут. +5 к Семье». Неоновый UI киберпанк.',
+    img: '/img/step-3.webp',
+    alt: 'Телефон с заданием «Позвони отцу. 10 минут. +5 к Семье»',
     title: 'Получаешь первый шаг',
     body: 'Конкретное задание под твою боль на сегодня.',
   },
@@ -218,9 +231,7 @@ function Steps() {
           {STEPS.map((s) => (
             <div className="step-card reveal" key={s.num}>
               <div className="step-num">{s.num}</div>
-              <div className="ph">
-                <span className="ph-prompt">{s.prompt}</span>
-              </div>
+              <img src={s.img} alt={s.alt} className="step-img" loading="lazy" width="724" height="724" />
               <h3>{s.title}</h3>
               <p>{s.body}</p>
             </div>
@@ -353,11 +364,7 @@ function Register() {
   return (
     <section className="register" id="register" data-screen-label="08 Register">
       <div className="register-bg" aria-hidden="true">
-        <div className="ph">
-          <span className="ph-prompt">
-            Арман стоит в&nbsp;полумраке, освещён только тёплым золотым светом, смотрит прямо в&nbsp;камеру, спокойное уверенное выражение. Сильно приглушённая (40% непрозрачности или меньше). Аниме.
-          </span>
-        </div>
+        <img src="/img/register-bg.webp" alt="" className="register-bg-img" loading="lazy" />
       </div>
       <div className="wrap">
         <div className="register-inner reveal">

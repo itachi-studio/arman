@@ -740,6 +740,29 @@ footer {
 .foot-links a { color: var(--text-mute); text-decoration: none; }
 .foot-links a:hover { color: var(--gold); }
 
+/* ---------- Real images ---------- */
+.hero-img,
+.pain-img,
+.step-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--line-2);
+}
+.hero-img { aspect-ratio: 4/5; }
+.pain-img { aspect-ratio: 4/5; filter: saturate(0.85) brightness(0.92); }
+.step-img { aspect-ratio: 1/1; margin-bottom: 18px; }
+
+.register-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px);
+}
+
 /* ---------- Reveal-on-scroll ---------- */
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.in { opacity: 1; transform: translateY(0); }
